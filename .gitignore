@@ -1,0 +1,30 @@
+# Google App Engine generated folder
+appengine-generated/
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS resource forks
+._*
+
+# macOS folder attributes
+.Spotlight-V100
+.Trashes
+
+# -- IGNORE --
+songs/
+videos/5ca5a47d-119c-40bd-abb4-39eb07faea24.mp4
+videos/8c641deb-e22c-4e0d-92bf-541597e44113.mp4
+videos/c91f6c18-bb83-4249-8b9e-451f07f7e7e5.mp4
+videos/casaiya_1.mov
+videos/db73b106-d398-4291-bf7c-26225550dfb1.mp4
+necessary_links.txt
+images/1.jpg
+images/3.jpg
+images/9.jpg
+images/10.jpg
+images/11.jpg
+images/13.jpg
+images/14.jpg
+images/15.jpg

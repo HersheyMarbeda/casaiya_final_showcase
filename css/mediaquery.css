@@ -1,0 +1,82 @@
+@media screen and (max-width: 720px){
+    html, body {
+    overflow-x: hidden;
+  }
+    #desktop-nav{
+        display: none;
+    }
+    #hamburger-nav{
+        display: block;
+    }
+    .logo-img {
+        height: 100px;
+    }
+   .home-section {
+        height: 40vh;
+        padding: 0;
+        margin: auto;
+    }
+    .home-section video {
+        width: 100%;
+        height: 40vh;
+        max-width: 100%;
+        object-fit: cover;
+    }
+    #about-page.about-section {
+        padding: 16px 4px;
+        margin: 24px auto;
+    }
+    #about-page .row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    #about-page .about-image {
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #about-page h2 {
+        font-size: 1.3em;
+        margin-bottom: 16px;
+    }
+    #about-page .col {
+        font-size: 1em;
+        line-height: 1.5;
+        padding: 0 20px;
+        width: 100%;              /* Allow full width for wrapping */
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;           /* Remove flex to avoid shrinking */
+        box-sizing: border-box;
+        word-break: break-word;   /* Ensure long words wrap */
+        overflow-wrap: break-word;
+    }
+    #contact-page.contact-section {
+        padding: 16px 4px;
+        margin: 24px auto;
+    }
+    #contact-page h2 {
+        font-size: 1.2em;
+        margin-bottom: 16px;
+    }
+    .contact-socials {
+        gap: 1rem;
+    }
+    .contact-socials a img {
+        width: 36px;
+        height: 36px;
+    }
+    .footer {
+        padding: 16px 0 12px 0;
+        font-size: 0.8rem;
+        margin-top: 24px;
+    }
+    .footer p {
+        font-size: 0.7rem;
+    }
+}
+

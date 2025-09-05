@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Meddon&family=Sansita+Swashed:wght@300..900&family=Sirivennela&family=Tangerine&display=swap');
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main{
+  flex: 1; /* Allow main to grow and fill available space */
+}
+
+
+/* Desktop Nav */
+#desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 24px 40px 12px 40px;
+    background: #f1f0ea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-family: "Sansita Swashed", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.6rem;
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    text-decoration: underline;
+    color: #aeaca5;
+    text-underline-offset: 6px; /* Adjust the gap as needed */
+}
+
+/* Hamburger Nav (hidden by default on desktop) */
+#hamburger-nav {
+    display: none;
+    width: 100%;
+    background: #f1f0ea ;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+}
+
+.hamburger-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    width: 100%;
+}
+
+.hamburger-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: black;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for better visibility */
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 24px 0 0 0;
+    position: absolute;
+    top: 100%; /* Directly below the hamburger-header */
+    left: 0;
+    width: 100vw;
+    background: #000000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease;
+}
+
+.menu-links.open {
+    max-height: 500px; /* Enough to show all links */
+    opacity: 1;
+}
+
+.menu-links .nav-links {
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu-links .nav-links li a {
+    color: rgb(254, 250, 250);
+    background: none;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    text-align: right;
+}
+
+.menu-links .nav-links li a:hover,
+.menu-links .nav-links li a:focus {
+    color: rgb(101, 101, 101);
+    background: none;
+    font-size: 1.2rem;
+    padding: 8px 0;
+    text-align: right;
+    text-underline-offset: 6px;
+}
+
+.hide-nav {
+    transform: translateY(-120px); /* Move nav out of view */
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.show-nav {
+    transform: translateY(0); /* Reset position */
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* Video Section */
+video::-webkit-media-controls-playback-rate { 
+    display: none !important;
+}
+
+/* this hides the fullscreen button on the video controls 
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+*/
+
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.home-section video {
+    width: 100%;         
+    height: 85vh;       
+    object-fit: cover;
+    background: #000;
+}
+
+/* Gallery Section */
+#gallery-page {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #e0ddcf;
+    text-align: center;
+}
+#gallery-page .carousel-inner {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 700px; 
+    overflow: hidden;
+} 
+#gallery-page .carousel-indicators {
+    position: absolute;
+    left: 35%;
+    transform: translateX(-50%);
+    bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    z-index: 10;
+}
+.carousel-inner img {
+    width: 100%; 
+    max-width: 600px;
+    height: 700px; 
+    object-fit: cover;
+    margin: 0 auto; 
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.carousel-indicators button {
+    background-color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    background: rgba(83,75,82,0.8);
+    border: none;
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: background 0.2s;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    transform: scale(1.2); /* Slightly enlarge the icons */
+    opacity: 0.3; 
+    transition: opacity 0.3s ease; 
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+.carousel-control-prev {
+    left: 0; /* Closer to the image */
+}
+
+.carousel-control-next {
+    right: 0; /* Closer to the image */
+}
+
+/* About Page */
+#about-page {
+    margin-top: auto;
+    width: 100%;
+    background: #474448;
+    padding: 64px 0;
+}
+#about-page .about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+#about-page h2 {
+    font-size: 2.2em;
+    color: whitesmoke;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-family: "Sansita Swashed", cursive;
+    text-align: center;
+    margin-top: 0;
+}
+
+#about-page .row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+#about-page .about-image {
+    width: 100%; 
+    max-width: 600px;
+    height: 600px; 
+    object-fit: cover;
+    margin: 0 auto; 
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: block;
+}
+
+#about-page .col {
+    flex: 1;
+    font-family: poppins, sans-serif;
+    font-size: 1.15em;
+    color: whitesmoke;
+    line-height: 1.7;
+    text-align: left;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Contact Section */
+#contact-page {
+    width: 100%;
+    background: #57254b;
+    padding: 64px 0;
+}
+
+#contact-page.contact-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#contact-page h2 {
+    font-size: 2em;
+    color: #534b52;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+    font-family: "Sansita Swashed", cursive;
+    text-align: center;
+}
+
+.contact-socials {
+   display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-socials a img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: filter 0.2s;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.contact-socials a.facebook:hover img {
+    filter: invert(29%) sepia(96%) saturate(749%) hue-rotate(186deg) brightness(95%) contrast(92%);
+}
+
+.contact-socials a.instagram:hover img {
+    filter: invert(41%) sepia(86%) saturate(747%) hue-rotate(314deg) brightness(95%) contrast(92%);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px 0 24px 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.07);
+}
+
+.footer p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: .8rem;
+    letter-spacing: 2px;
+}
