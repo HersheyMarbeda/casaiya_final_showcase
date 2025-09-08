@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Meddon&family=Sansita+Swashed:wght@300..900&family=Sirivennela&family=Tangerine&display=swap');
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Courgette&family=Meddon&family=Oranienbaum&family=Playfair+Display:ital,wght@1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita+Swashed:wght@500&display=swap');
 
 /* General Styles */
 * {
@@ -21,9 +22,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 150px;
     padding: 24px 40px 12px 40px;
-    background: #f1f0ea;
+    background: #844f39;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -42,18 +43,18 @@ main{
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 50px;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li a {
-    color: black;
+    color: #fdeed9;
     text-decoration: none;
-    font-family: "Sansita Swashed", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 1.6rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3rem;
     padding: 8px 18px;
     border-radius: 4px;
     transition: color 0.2s;
@@ -61,8 +62,8 @@ main{
 
 .nav-links li a:hover,
 .nav-links li a:focus {
-    text-decoration: underline;
-    color: #aeaca5;
+    text-decoration: none;
+    color: #a48470;
     text-underline-offset: 6px; /* Adjust the gap as needed */
 }
 
@@ -70,7 +71,7 @@ main{
 #hamburger-nav {
     display: none;
     width: 100%;
-    background: #f1f0ea ;
+    background: #844f39 ;
     position: sticky;
     top: 0;
     z-index: 101;
@@ -82,26 +83,45 @@ main{
     justify-content: space-between;
     padding: 16px 24px;
     width: 100%;
+    margin-bottom: 0; /* Remove space below hamburger for mobile */
 }
 
 .hamburger-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: inline-block;
     cursor: pointer;
+}
+
+.bar1, .bar2, .bar3{
+    width: 35px;
+    height: 2px; /* thinner bars */
+    background-color: #fdeed9;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.bar1, .bar2, .bar3 {
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 8px) rotate(-45deg);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -8px) rotate(45deg);
 }
 
 .hamburger-icon span {
     display: block;
-    height: 4px;
+    height: 2px; 
     width: 100%;
-    background: black;
+    background: #888; /* Lighter color for less bold look */
     margin: 5px 0;
-    border-radius: 2px;
+    border-radius: 1px;
     transition: 0.3s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for better visibility */
+    box-shadow: none;
 }
 
 .menu-links {
@@ -115,7 +135,7 @@ main{
     top: 100%; /* Directly below the hamburger-header */
     left: 0;
     width: 100vw;
-    background: #000000;
+    background: #040202;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     z-index: 999;
     max-height: 0;
@@ -125,17 +145,18 @@ main{
 }
 
 .menu-links.open {
-    max-height: 500px; /* Enough to show all links */
+    max-height: 600px; /* Enough to show all links */
     opacity: 1;
 }
 
 .menu-links .nav-links {
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 1.3rem;
 }
 
 .menu-links .nav-links li a {
-    color: rgb(254, 250, 250);
+    color: whitesmoke;
     background: none;
     font-size: 1.2rem;
     padding: 8px 0;
@@ -144,7 +165,7 @@ main{
 
 .menu-links .nav-links li a:hover,
 .menu-links .nav-links li a:focus {
-    color: rgb(101, 101, 101);
+    color: #c9b7aa;
     background: none;
     font-size: 1.2rem;
     padding: 8px 0;
@@ -193,26 +214,29 @@ video::-webkit-media-controls-fullscreen-button {
 /* Gallery Section */
 #gallery-page {
     position: relative;
-    padding: 50px 20px;
-    background-color: #e0ddcf;
+    padding: 80px 0 80px 0;
+    background-color: #ddb892;
     text-align: center;
+    margin-bottom: 0;
+    width: auto;
 }
+
 #gallery-page .carousel-inner {
     position: relative;
     width: 100%;
-    max-width: 700px;
+    max-width: 1200px;
     margin: 0 auto;
-    height: 700px; 
-    overflow: hidden;
+    height: 900px; 
 } 
+
 #gallery-page .carousel-indicators {
     position: absolute;
     left: 35%;
     transform: translateX(-50%);
-    bottom: 24px;
+    bottom: 35px;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
     align-items: center;
     width: auto;
@@ -221,21 +245,22 @@ video::-webkit-media-controls-fullscreen-button {
 .carousel-inner img {
     width: 100%; 
     max-width: 600px;
-    height: 700px; 
+    height: 1000px; 
     object-fit: cover;
     margin: 0 auto; 
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(250, 246, 246, 0.08);
 }
 
 .carousel-indicators button {
-    background-color: #333;
+    background-color: #dfd7d7;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
+    position: absolute;
     top: 50%;
-    background: rgba(83,75,82,0.8);
+    background: rgba(255, 255, 255, 0.7);
     border: none;
     border-radius: 50%;
     z-index: 3;
@@ -260,20 +285,23 @@ video::-webkit-media-controls-fullscreen-button {
 }
 
 .carousel-control-prev {
-    left: 0; /* Closer to the image */
+    left: 5px; /* Closer to the image */
+    left: 400px !important;
 }
 
 .carousel-control-next {
-    right: 0; /* Closer to the image */
+    right: 5px; /* Closer to the image */
+    right: 400px !important;
 }
 
 /* About Page */
 #about-page {
-    margin-top: auto;
+    margin-top: 0;
     width: 100%;
-    background: #474448;
+    background: #ede0d4;
     padding: 64px 0;
 }
+
 #about-page .about-section {
     max-width: 900px;
     margin: 0 auto;
@@ -285,10 +313,13 @@ video::-webkit-media-controls-fullscreen-button {
 
 #about-page h2 {
     font-size: 2.2em;
-    color: whitesmoke;
+    color: #513529;
     margin-bottom: 20px;
     letter-spacing: 2px;
-    font-family: "Sansita Swashed", cursive;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     text-align: center;
     margin-top: 0;
 }
@@ -304,7 +335,7 @@ video::-webkit-media-controls-fullscreen-button {
 #about-page .about-image {
     width: 100%; 
     max-width: 600px;
-    height: 600px; 
+    height: 900px; 
     object-fit: cover;
     margin: 0 auto; 
     border-radius: 12px;
@@ -314,51 +345,62 @@ video::-webkit-media-controls-fullscreen-button {
 
 #about-page .col {
     flex: 1;
-    font-family: poppins, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
     font-size: 1.15em;
-    color: whitesmoke;
     line-height: 1.7;
     text-align: left;
     padding: 0;
     display: flex;
     align-items: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 /* Contact Section */
 #contact-page {
     width: 100%;
-    background: #57254b;
-    padding: 64px 0;
+    background: whitesmoke;
+    padding: 0;
+    margin-bottom: 0 ;
+    margin-top: 0 !important;
 }
 
 #contact-page.contact-section {
-    max-width: 600px;
+    max-width: auto;
     margin: 0 auto;
     padding: 48px 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: none;
     box-shadow: none;
     border-radius: 0;
+    margin-bottom: 0;
 }
 
 #contact-page h2 {
     font-size: 2em;
-    color: #534b52;
+    color: #513529;
     margin-bottom: 32px;
     letter-spacing: 2px;
-    font-family: "Sansita Swashed", cursive;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     text-align: center;
 }
 
 .contact-socials {
    display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+   justify-content: center;
+   gap: 2rem;
 }
 
 .contact-socials a img {
+    margin-top: 1.5rem;
     width: 48px;
     height: 48px;
     object-fit: contain;
@@ -381,11 +423,10 @@ video::-webkit-media-controls-fullscreen-button {
     width: 100%;
     background: black;
     color: whitesmoke;
-    text-align: center;
-    padding: 10px 0 24px 0;
+    padding: 20px 0 24px 0;
     font-size: 1.1rem;
     letter-spacing: 1px;
-    margin-top: 20px;
+    margin-top: 0;
     box-shadow: 0 -2px 12px rgba(0,0,0,0.07);
 }
 
@@ -393,6 +434,8 @@ video::-webkit-media-controls-fullscreen-button {
     margin: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    font-style: italic;
     font-size: .8rem;
     letter-spacing: 2px;
+    text-align: center;
 }

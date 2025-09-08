@@ -4,7 +4,7 @@ function toggleMenu() {
   const hamburgerIcon = document.querySelector('.hamburger-icon');
 
   menuLinks.classList.toggle('open');
-  hamburgerIcon.classList.toggle('open'); 
+  hamburgerIcon.classList.toggle('change'); // Use 'change' for animation
 }
 
 // Disable right-click context menu on the video
