@@ -49,3 +49,41 @@ window.addEventListener('scroll', function() {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, false);
+
+// Simple image carousel for mobile gallery
+const images = document.querySelectorAll('.gallery-mobile-img');
+const indicatorsWrapper = document.querySelector('.carousel-indicators');
+let currentIndex = 0;
+
+// Dynamically create indicators based on number of images
+images.forEach((img, i) => {
+  const dot = document.createElement('button');
+  if(i === 0) dot.classList.add('active');
+  indicatorsWrapper.appendChild(dot);
+
+  dot.addEventListener('click', () => {
+    currentIndex = i;
+    showImage(currentIndex);
+  });
+});
+
+const indicators = document.querySelectorAll('.carousel-indicators button');
+
+function showImage(index) {
+  images.forEach((img, i) => img.classList.toggle('active', i === index));
+  indicators.forEach((dot, i) => dot.classList.toggle('active', i === index));
+}
+
+// Swipe support for mobile
+let startX = 0;
+let endX = 0;
+const gallery = document.querySelector('.gallery-mobile-images');
+
+gallery.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+gallery.addEventListener('touchmove', e => endX = e.touches[0].clientX);
+gallery.addEventListener('touchend', () => {
+  if(startX - endX > 50) currentIndex = (currentIndex + 1) % images.length; // Swipe left
+  else if(endX - startX > 50) currentIndex = (currentIndex - 1 + images.length) % images.length; // Swipe right
+  showImage(currentIndex);
+  startX = endX = 0;
+});
