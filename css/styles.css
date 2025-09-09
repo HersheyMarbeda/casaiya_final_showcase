@@ -63,7 +63,7 @@ main{
 .nav-links li a:hover,
 .nav-links li a:focus {
     text-decoration: none;
-    color: #a48470;
+    color: #a17c68;
     text-underline-offset: 6px; /* Adjust the gap as needed */
 }
 
@@ -91,6 +91,7 @@ main{
     cursor: pointer;
 }
 
+/* Hamburger Bars */
 .bar1, .bar2, .bar3{
     width: 35px;
     height: 2px; /* thinner bars */
@@ -135,7 +136,7 @@ main{
     top: 100%; /* Directly below the hamburger-header */
     left: 0;
     width: 100vw;
-    background: #040202;
+    background: #2a1b15;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     z-index: 999;
     max-height: 0;
@@ -156,16 +157,21 @@ main{
 }
 
 .menu-links .nav-links li a {
-    color: whitesmoke;
+    color: #eae5d6;
     background: none;
     font-size: 1.2rem;
     padding: 8px 0;
     text-align: right;
 }
 
+.menu-links .nav-links li {
+    position: relative;
+}
+
+
 .menu-links .nav-links li a:hover,
 .menu-links .nav-links li a:focus {
-    color: #c9b7aa;
+    color: #a17c68;
     background: none;
     font-size: 1.2rem;
     padding: 8px 0;
@@ -215,7 +221,7 @@ video::-webkit-media-controls-fullscreen-button {
 #gallery-page {
     position: relative;
     padding: 80px 0 80px 0;
-    background-color: #ddb892;
+    background-color: #b67f60;
     text-align: center;
     margin-bottom: 0;
     width: auto;
@@ -282,23 +288,22 @@ video::-webkit-media-controls-fullscreen-button {
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
     opacity: 1; /* Fully visible on hover */
+    cursor: pointer;
 }
 
 .carousel-control-prev {
-    left: 5px; /* Closer to the image */
-    left: 400px !important;
+    left: 24px; /* Reasonable distance from the edge */
 }
 
 .carousel-control-next {
-    right: 5px; /* Closer to the image */
-    right: 400px !important;
+    right: 24px; /* Reasonable distance from the edge */
 }
 
 /* About Page */
 #about-page {
     margin-top: 0;
     width: 100%;
-    background: #ede0d4;
+    background: #debea2;
     padding: 64px 0;
 }
 
@@ -313,7 +318,7 @@ video::-webkit-media-controls-fullscreen-button {
 
 #about-page h2 {
     font-size: 2.2em;
-    color: #513529;
+    color: #432818;
     margin-bottom: 20px;
     letter-spacing: 2px;
     font-family: "Sansita Swashed", system-ui;
@@ -335,7 +340,7 @@ video::-webkit-media-controls-fullscreen-button {
 #about-page .about-image {
     width: 100%; 
     max-width: 600px;
-    height: 900px; 
+    height: 700px; 
     object-fit: cover;
     margin: 0 auto; 
     border-radius: 12px;
@@ -348,7 +353,7 @@ video::-webkit-media-controls-fullscreen-button {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: black;
+    color: #43281c;
     font-size: 1.15em;
     line-height: 1.7;
     text-align: left;
@@ -363,10 +368,20 @@ video::-webkit-media-controls-fullscreen-button {
 /* Contact Section */
 #contact-page {
     width: 100%;
-    background: whitesmoke;
+    background: #ede0d4;
     padding: 0;
     margin-bottom: 0 ;
     margin-top: 0 !important;
+}
+
+#contact-page .p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #43281c;
+    font-size: 1.15em;
+    line-height: 1.7;
+    text-align: left;
 }
 
 #contact-page.contact-section {
@@ -383,7 +398,7 @@ video::-webkit-media-controls-fullscreen-button {
 
 #contact-page h2 {
     font-size: 2em;
-    color: #513529;
+    color: #432818;
     margin-bottom: 32px;
     letter-spacing: 2px;
     font-family: "Sansita Swashed", system-ui;
@@ -415,14 +430,23 @@ video::-webkit-media-controls-fullscreen-button {
 }
 
 .contact-socials a.instagram:hover img {
-    filter: invert(41%) sepia(86%) saturate(747%) hue-rotate(314deg) brightness(95%) contrast(92%);
+    filter: invert(17%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(95%) contrast(110%);
 }
+
+.contact-socials a.tiktok:hover img {
+  filter: invert(36%) sepia(95%) saturate(1200%) hue-rotate(95deg) brightness(90%) contrast(95%);
+}
+
+.contact-socials a.email:hover img {
+    filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+}
+
 
 /* Footer */
 .footer {
     width: 100%;
     background: black;
-    color: whitesmoke;
+    color: #eae5d6;
     padding: 20px 0 24px 0;
     font-size: 1.1rem;
     letter-spacing: 1px;
