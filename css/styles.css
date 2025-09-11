@@ -15,13 +15,7 @@
   display: none;
 }
 
-#gallery-mobile {
-    display: none;
-}
 
-#gallery-mobile {
-    display: none;
-}
 
 
 html {
@@ -90,7 +84,7 @@ main{
     background: #844f39 ;
     position: sticky;
     top: 0;
-    z-index: 101;
+    z-index: 10;
 }
 
 .hamburger-header {
@@ -109,7 +103,7 @@ main{
 
 /* Hamburger Bars */
 .bar1, .bar2, .bar3{
-    width: 35px;
+    width: 25px;
     height: 2px; /* thinner bars */
     background-color: #fdeed9;
     margin: 6px 0;
@@ -175,7 +169,7 @@ main{
 .menu-links .nav-links li a {
     color: #eae5d6;
     background: none;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     padding: 8px 0;
     text-align: right;
 }
@@ -189,7 +183,7 @@ main{
 .menu-links .nav-links li a:focus {
     color: #a17c68;
     background: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 8px 0;
     text-align: right;
     text-underline-offset: 6px;
@@ -242,6 +236,7 @@ video::-webkit-media-controls-fullscreen-button {
     margin-bottom: 0;
     width: auto;
 }
+
 #gallery-page h2 {
     font-size: 2.2em;
     color: #fdeed9;
@@ -350,19 +345,27 @@ video::-webkit-media-controls-fullscreen-button {
 
 /* Wrapper centers indicators*/
 .carousel-indicators-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 25px;  /* Space above indicators */
+    margin-bottom: 0;
+    position: relative;
 }
 
 /* Indicators styling */
 .carousel-indicators button {
-  width: 8px;
-  height: 12px;
-  border-radius: 20%;
-  background-color: #ccc;
-  border: none;
-  transition: background-color 0.3s;
+    width: 12px;
+    height: 12px;
+    border-radius: 20%;
+    background-color: #ccc;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+/* Hide extra tiny indicators if present */
+.carousel-indicators button:not([data-bs-slide-to]) {
+    display: none !important;
 }
 
 .carousel-indicators .active {
