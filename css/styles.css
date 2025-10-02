@@ -4,6 +4,7 @@
 @media screen and (min-width: 721px){
   #gallery-mobile { display: none !important; }
 }
+
 /* General Styles */
 * {
   margin: 0;
@@ -15,17 +16,14 @@
   display: none;
 }
 
-
-
-
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 main{
   flex: 1; /* Allow main to grow and fill available space */
 }
-
 
 /* Desktop Nav */
 #desktop-nav {
@@ -43,6 +41,7 @@ main{
 .logo {
     display: flex;
     align-items: center;
+    gap: 200px;
 }
 
 .logo-img {
@@ -178,17 +177,6 @@ main{
     position: relative;
 }
 
-
-.menu-links .nav-links li a:hover,
-.menu-links .nav-links li a:focus {
-    color: #a17c68;
-    background: none;
-    font-size: 1rem;
-    padding: 8px 0;
-    text-align: right;
-    text-underline-offset: 6px;
-}
-
 .hide-nav {
     transform: translateY(-120px); /* Move nav out of view */
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
@@ -199,32 +187,22 @@ main{
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-/* Video Section */
-video::-webkit-media-controls-playback-rate { 
-    display: none !important;
+/* Home Page Styles */
+#home-page {
+    padding: 0 ;
+    margin: 0 ;
+    margin-top: 0;
+    margin-bottom: 0 !important; /* Remove bottom margin */
+    position: relative; /* Ensure proper positioning */
 }
-
-/* this hides the fullscreen button on the video controls 
-video::-webkit-media-controls-fullscreen-button {
-    display: none !important;
-}
-*/
-
-.home-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    background: #f9f9f9;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.home-section video {
-    width: 100%;         
-    height: 85vh;       
-    object-fit: cover;
-    background: #000;
+#home-page iframe {
+    width: 100%; 
+    max-width: 1800px; 
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 16/9; /* Ensure the video maintains a 16:9 aspect ratio */
+    margin: 0 auto; /* Center the video */
+    display: block; 
+    margin-bottom: 0 !important;
 }
 
 /* Gallery Section */
@@ -289,7 +267,7 @@ video::-webkit-media-controls-fullscreen-button {
 /* Reset default positioning */
 .carousel-control-prev,
 .carousel-control-next {
-  position: static;        /* remove absolute positioning */
+  position: static;        
   top: auto;
   bottom: auto;
   transform: none;
@@ -413,7 +391,7 @@ video::-webkit-media-controls-fullscreen-button {
     margin-top: 0;
     width: 100%;
     background: #debea2;
-    padding: 64px 0;
+    padding: 64px 16px;
 }
 
 #about-page .about-section {
@@ -436,6 +414,7 @@ video::-webkit-media-controls-fullscreen-button {
     font-style: normal;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 4rem; /* distance between the heading and the columns */
 }
 
 #about-page .row {
@@ -474,6 +453,13 @@ video::-webkit-media-controls-fullscreen-button {
     white-space: normal;
 }
 
+#about-page .about-content {
+    font-size: 1.3rem; 
+    line-height: 1.8; /* Improve line spacing */
+    text-align: left; 
+    max-width: 600px; /* Limit the width of the text */
+    margin: 0 auto; 
+}
 /* Contact Section */
 #contact-page {
     width: 100%;
@@ -488,8 +474,8 @@ video::-webkit-media-controls-fullscreen-button {
     font-weight: 400;
     font-style: normal;
     color: #43281c;
-    font-size: 1.15em;
-    line-height: 1.7;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
     text-align: left;
 }
 
@@ -506,7 +492,7 @@ video::-webkit-media-controls-fullscreen-button {
 }
 
 #contact-page h2 {
-    font-size: 2em;
+    font-size: 2rem;
     color: #432818;
     margin-bottom: 32px;
     letter-spacing: 2px;
@@ -520,7 +506,7 @@ video::-webkit-media-controls-fullscreen-button {
 .contact-socials {
    display: flex;
    justify-content: center;
-   gap: 1rem;
+   gap: 1.5rem;
 }
 
 .contact-socials a img {
